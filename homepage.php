@@ -246,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
           <a href="logout.php">Logout</a>
       </div>
 
-      <h1>Welcome to Baladog Online Food Reservation</h1>
+      <h1>Welcome to kupals Online Food Reservation</h1>
     
       <!-- Scrollable Food Items Container -->
       <div class="food-container">
