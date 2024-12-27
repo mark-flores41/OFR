@@ -1,0 +1,232 @@
+<?php
+// Database connection settings
+$host = 'localhost'; // Database host
+$username = 'root'; // Database username
+$password = ''; // Database password
+$dbname = 'online_reservation'; // Database name
+
+// Enable error reporting for development (disable in production)
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+try {
+    // Create a new MySQLi connection
+    $conn = new mysqli($host, $username, $password, $dbname);
+    // Set the charset to UTF-8 for consistent encoding
+    $conn->set_charset('utf8mb4');
+} catch (mysqli_sql_exception $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+      <!-- Greeting and username -->
+      <div class="greeting-container">
+          <img src="image/eyy.jpg" alt="Customer Image" id="customerImage">
+          <!-- Display username if it's set in the session -->
+          <p>Hello, <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest' ?>!</p>
+      </div>
+
+      <!-- Buttons Container at top-right (aligned horizontally) -->
+      <div class="buttons-container">
+          <!-- MyOrder Button (First) -->
+          <a href="myorders.php">My Orders</a>
+
+          <!-- Logout Button (Second) -->
+          <a href="logout.php">Logout</a>
+      </div>
+
+      <h1>Welcome to Baladog Online Food Delivery</h1>
+    
+      <!-- Scrollable Food Items Container -->
+      <div class="food-container">
+          <!-- Food Items -->
+          <div class="food-options">
+              <!-- Example food item -->
+              <div class="food-item">
+                  <img src="image/burger.png" alt="Burger">
+                  <h3>Burger</h3>
+                  <p>Cheesy, juicy, and packed with flavor. A classic favorite!</p>
+                  <div class="price">₱150.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Burger">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+               <!-- Fries -->
+               <div class="food-item">
+                  <img src="image/fries.jpg" alt="Fries">
+                  <h3>Crispy Fries</h3>
+                  <p>Golden, crispy fries that go perfectly with any meal!</p>
+                  <div class="price">₱100.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Crispy Fries">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                <!-- Pizza -->
+              <div class="food-item">
+                  <img src="image/salad.jpg" alt="Salad">
+                  <h3>Salad</h3>
+                  <p>Delicious and healthy!</p>
+                  <div class="price">₱105.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Hot Pizza">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                <!-- Pizza -->
+              <div class="food-item">
+                  <img src="image/pizza.jpg" alt="Pizza">
+                  <h3>Hot Pizza</h3>
+                  <p>Freshly baked pizza with a variety of toppings to choose from!</p>
+                  <div class="price">₱120.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Hot Pizza">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                 <!-- Shake -->
+               <div class="food-item">
+                  <img src="image/shake.jpg" alt="Shake">
+                  <h3>Shake</h3>
+                  <p>Sweet and cold!</p>
+                  <div class="price">₱50.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Shake">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+              </div>
+                 <!-- Spaghetti -->
+               <div class="food-item">
+                  <img src="image/spaghetti.jpg" alt="Spaghetti">
+                  <h3>Spaghetti</h3>
+                  <p>Delicious and sweet!</p>
+                  <div class="price">₱60.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Spaghetti">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                  <!-- Steak -->
+               <div class="food-item">
+                  <img src="image/steak.jpg" alt="Steak">
+                  <h3>Steak</h3>
+                  <p>Savory and rich taste!</p>
+                  <div class="price">₱500.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Steak">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+            </div>
+                <!-- Drinks -->
+              <div class="food-item">
+                  <img src="image/drinks.jpg" alt="Drinks">
+                  <h3>Drinks</h3>
+                  <p>Refreshing beverages!</p>
+                  <div class="price">₱45.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Drinks">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+             </div>
+         </div>
+      </div>
+  </div>
+
+
+
+
+ <!-- Fries -->
+               <div class="food-item">
+                  <img src="image/fries.jpg" alt="Fries">
+                  <h3>Crispy Fries</h3>
+                  <p>Golden, crispy fries that go perfectly with any meal!</p>
+                  <div class="price">₱100.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Crispy Fries">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                <!-- Pizza -->
+              <div class="food-item">
+                  <img src="image/salad.jpg" alt="Salad">
+                  <h3>Salad</h3>
+                  <p>Delicious and healthy!</p>
+                  <div class="price">₱105.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Hot Pizza">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                <!-- Pizza -->
+              <div class="food-item">
+                  <img src="image/pizza.jpg" alt="Pizza">
+                  <h3>Hot Pizza</h3>
+                  <p>Freshly baked pizza with a variety of toppings to choose from!</p>
+                  <div class="price">₱120.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Hot Pizza">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                 <!-- Shake -->
+               <div class="food-item">
+                  <img src="image/shake.jpg" alt="Shake">
+                  <h3>Shake</h3>
+                  <p>Sweet and cold!</p>
+                  <div class="price">₱50.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Shake">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+              </div>
+                 <!-- Spaghetti -->
+               <div class="food-item">
+                  <img src="image/spaghetti.jpg" alt="Spaghetti">
+                  <h3>Spaghetti</h3>
+                  <p>Delicious and sweet!</p>
+                  <div class="price">₱60.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Spaghetti">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+              </div>
+                  <!-- Steak -->
+               <div class="food-item">
+                  <img src="image/steak.jpg" alt="Steak">
+                  <h3>Steak</h3>
+                  <p>Savory and rich taste!</p>
+                  <div class="price">₱500.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Steak">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+            </div>
+                <!-- Drinks -->
+              <div class="food-item">
+                  <img src="image/drinks.jpg" alt="Drinks">
+                  <h3>Drinks</h3>
+                  <p>Refreshing beverages!</p>
+                  <div class="price">₱45.00</div>
+                  <form action="homepage.php" method="POST">
+                      <input type="hidden" name="food_item" value="Drinks">
+                      <button type="submit" name="add_to_cart">Add to Cart</button>
+                  </form>
+             </div>
