@@ -214,12 +214,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accept_order'])) {
                     "Spaghetti" => "image/spaghetti.jpg",
                     "Steak" => "image/steak.jpg",
                 ];
-                $image_path = isset($food_images[$order['item']]) ? $food_images[$order['item']] : "";
-        ?>
+                $image_path = isset($food_images[$order['food_item']]) ? $food_images[$order['food_item']] : 'food_items';
+                ?>
                 <div class="order-item">
-                    <img src="<?= htmlspecialchars($image_path) ?>" alt="<?= htmlspecialchars($order['item']) ?>">
+                    <img src="<?= htmlspecialchars($image_path) ?>" alt="<?= htmlspecialchars($order['food_item']) ?>">
                     <div>
-                        <h3><?= htmlspecialchars($order['item']) ?></h3>
+                        <h3><?= htmlspecialchars($order['food_item']) ?></h3>
                         <p>Status: <span class="status"><?= htmlspecialchars($order['status']) ?></span></p>
                     </div>
                     <?php if ($order['status'] == 'Waiting for orders'): ?>
